@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import applyRoutes from "./routes/apply.js";
+import hireRoutes from "./routes/hire.js";
 
 dotenv.config();
 const app = express();
@@ -18,6 +19,9 @@ app.get("/", (req, res) => {
 
 // Apply routes
 app.use("/api", applyRoutes);
+
+// Hire routes
+app.use("/api", hireRoutes);
 
 // Start server
 const PORT = process.env.PORT || 5000;
